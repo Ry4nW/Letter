@@ -15,7 +15,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.getIcons().add(new Image("https://image.flaticon.com/icons/png/512/196/196308.png"));
         primaryStage.setTitle("Text Editor");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        Scene scene = new Scene(root, 700, 500);
+        scene.getStylesheets().add("css/stylesheet.css");
+        primaryStage.setScene(scene);
         primaryStage.show();
 
     }
