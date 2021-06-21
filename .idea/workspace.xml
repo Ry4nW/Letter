@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="icon">
-      <change afterPath="$PROJECT_DIR$/src/css/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/editorContent.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="css, txtContent, ui changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/File.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/saveFileTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/saveFileTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +165,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15682282" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -286,7 +283,11 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1623819306100" duration="60000" />
       <workItem from="1623819429906" duration="191000" />
-      <workItem from="1623819719690" duration="840000" />
+      <workItem from="1623819719690" duration="1369000" />
+      <workItem from="1623978693545" duration="685000" />
+      <workItem from="1623981160168" duration="76000" />
+      <workItem from="1624068894965" duration="788000" />
+      <workItem from="1624247645173" duration="5147000" />
     </task>
     <task id="LOCAL-00001" summary="Test cases">
       <created>1622864969014</created>
@@ -323,7 +324,35 @@
       <option name="project" value="LOCAL" />
       <updated>1622865128639</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(main, css): added stylesheet.css">
+      <created>1623820777699</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623820777699</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat(xml): ui changes">
+      <created>1623820824757</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623820824757</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat(sample): updates">
+      <created>1623820871538</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623820871538</updated>
+    </task>
+    <task id="LOCAL-00009" summary="css, txtContent, ui changes">
+      <created>1623820933024</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1623820933024</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -382,7 +411,11 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="textArea, Menu" />
     <MESSAGE value="icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="icon" />
+    <MESSAGE value="feat(main, css): added stylesheet.css" />
+    <MESSAGE value="feat(xml): ui changes" />
+    <MESSAGE value="feat(sample): updates" />
+    <MESSAGE value="css, txtContent, ui changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="css, txtContent, ui changes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
