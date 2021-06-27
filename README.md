@@ -1,3 +1,3 @@
 # Letter
 
-A word processor, redefined.
+Spend less time fiddling with technology and more time writing.
