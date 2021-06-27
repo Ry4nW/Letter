@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(sample): text styling">
-      <change afterPath="$PROJECT_DIR$/src/textEditor/TextFile.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(textEditor): GUI">
+      <change afterPath="$PROJECT_DIR$/src/IO/IO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IO/IOResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Text Editor icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bold-text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/italics-text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/underlined-text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/editorContent.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/sample/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/File.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/editorContent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/editorContent.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/TextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/TextFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +189,8 @@
       <recent name="C:\Users\ryanb\OneDrive\Documents\Programming\CS 11 VLN\Text Editor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ryanb\OneDrive\Documents\Programming\CS 11 VLN\Letter\src\textEditor" />
+      <recent name="C:\Users\ryanb\OneDrive\Documents\Programming\CS 11 VLN\Letter\src" />
       <recent name="C:\Users\ryanb\OneDrive\Documents\Programming\CS 11 VLN\Text Editor\src\textEditor" />
       <recent name="C:\Users\ryanb\OneDrive\Documents\Programming\CS 11 VLN\Text Editor\src" />
     </key>
@@ -336,7 +329,9 @@
       <workItem from="1624501891177" duration="2811000" />
       <workItem from="1624763753649" duration="352000" />
       <workItem from="1624769344451" duration="2815000" />
-      <workItem from="1624772251825" duration="342000" />
+      <workItem from="1624772251825" duration="633000" />
+      <workItem from="1624818004988" duration="3749000" />
+      <workItem from="1624821828179" duration="3131000" />
     </task>
     <task id="LOCAL-00001" summary="Test cases">
       <created>1622864969014</created>
@@ -415,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624253000910</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(textEditor): GUI">
+      <created>1624772624149</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624772624149</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat(textEditor): GUI">
+      <created>1624772681943</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624772681943</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -480,7 +489,8 @@
     <MESSAGE value="css, txtContent, ui changes" />
     <MESSAGE value="text editing imgs, ui update" />
     <MESSAGE value="feat(sample): text styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(sample): text styling" />
+    <MESSAGE value="feat(textEditor): GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(textEditor): GUI" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">

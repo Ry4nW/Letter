@@ -101,6 +101,7 @@
                              <Menu mnemonicParsing="false" text="Info">
                                  <MenuItem fx:id="githubMI" mnemonicParsing="false" onAction="#onInfoGithub" text="Github" />
                                  <MenuItem fx:id="iconMI" mnemonicParsing="false" onAction="#onInfoIcon" text="Icon" />
+                              <MenuItem fx:id="aboutMI" mnemonicParsing="false" onAction="#onAbout" text="About" />
                              </Menu>
                          </MenuBar>
                      </children>
