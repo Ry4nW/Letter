@@ -1,2 +1,3 @@
-# Text-Editor
-A simple text editor made in JavaFX.
+# Letter
+
+A word processor, redefined.
