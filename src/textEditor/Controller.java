@@ -1,4 +1,4 @@
-package sample;
+package textEditor;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -9,7 +9,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 
 import java.awt.*;
 import java.io.BufferedWriter;
@@ -36,31 +35,11 @@ public class Controller {
     public void initialize() {
         textEditor.setWrapText(true);
 
-        javafx.scene.image.Image boldedIcon = new javafx.scene.image.Image("https://uxwing.com/wp-content/themes/uxwing/download/03-text-editing/bold-text.png");
-        javafx.scene.image.Image italicizedIcon = new javafx.scene.image.Image("https://cdn2.iconfinder.com/data/icons/font-awesome/1792/italic-512.png");
-        javafx.scene.image.Image underlinedIcon = new Image("https://image.flaticon.com/icons/png/512/56/56833.png");
-
-        ImageView boldView = new ImageView(boldedIcon);
-        ImageView italicsView = new ImageView(italicizedIcon);
-        ImageView underlinedView = new ImageView(underlinedIcon);
-
-        underlinedView.setFitHeight(15);
-        italicsView.setFitHeight(15);
-        boldView.setFitHeight(15);
-
-        underlinedView.setPreserveRatio(true);
-        italicsView.setPreserveRatio(true);
-        boldView.setPreserveRatio(true);
-
-        boldButton.setGraphic(boldView);
-        italicsButton.setGraphic(italicsView);
-        underlineButton.setGraphic(underlinedView);
-
     }
 
     public void onSave() throws IOException {
 
-        FileWriter fw = new FileWriter("editorContent.txt", true);
+        FileWriter fw = new FileWriter("textEditor/editorContent.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);
 
         String line;
