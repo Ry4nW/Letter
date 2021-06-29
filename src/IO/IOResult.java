@@ -19,7 +19,7 @@ public class IOResult<T> {
         return data != null;
     }
 
-    public T getdata() {
+    public T getData() {
         return data;
     }
 }

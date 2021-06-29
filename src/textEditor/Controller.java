@@ -1,22 +1,22 @@
 package textEditor;
 
-import javafx.event.ActionEvent;
+import IO.IO;
+import IO.IOResult;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
+
 
 public class Controller {
 
@@ -32,24 +32,24 @@ public class Controller {
     public Button italicsButton;
     public Button boldButton;
 
+    private IO model;
+    private TextFile currentTextFile;
 
     // Requires: Nothing
     // Modifies:
     // Effects: Sets wrap text for our editor's text area, aka creates a newline for the user to type in
-    // once the end of the area's width is reached.
+    // once the end of the textEditor's width is reached.
     public void initialize() {
         textEditor.setWrapText(true);
     }
 
     // Requires: Nothing.
     // Modifies: Empty's the textArea.
-    // Effects: Saves all text into a file through save() in the {IO} class.
+    // Effects: Saves all text from {textEditor} into a file through save() in the {IO} class.
     public void onSave() throws IOException {
 
-        FileWriter fw = new FileWriter("textEditor/editorContent.txt", true);
-        BufferedWriter bw = new BufferedWriter(fw);
-
-        String line;
+        TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(textEditor.getText().split("\n")));
+        model.save(textFile);
 
     }
 
@@ -57,7 +57,26 @@ public class Controller {
     // Modifies: Fills the textArea.
     // Effects: Loads all text from a selected file through load() in the {IO} class.
     public void onLoad() {
+
         FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("./"));
+        File file = fileChooser.showOpenDialog(null);
+
+        if (file != null) {
+            IOResult<TextFile> io = model.load(file.toPath());
+
+            if (io.checked() && io.hasData()) {
+
+                currentTextFile = io.getData();
+                String content = "";
+
+                textEditor.clear();
+                currentTextFile.getContent().forEach(textEditor::appendText);
+
+            } else {
+                fileMessage.setText("File load failed.");
+            }
+        }
     }
 
     // Requires: Nothing.
@@ -103,7 +122,6 @@ public class Controller {
         alert.setContentText("Letter. \nSave, load and write your compositions with ease.");
         alert.show();
     }
-
 
     // Requires: Highlighted area the client wants to bold.
     // Modifies: textArea.

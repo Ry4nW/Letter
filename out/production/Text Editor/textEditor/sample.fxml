@@ -21,16 +21,16 @@
          <children>
             <AnchorPane prefHeight="98.0" prefWidth="601.0">
                <children>
-                  <ListView layoutX="51.0" layoutY="6.0" prefHeight="84.0" prefWidth="200.0" />
-                  <Button layoutX="268.0" layoutY="16.0" mnemonicParsing="false" text="Load" />
-                  <Button layoutX="330.0" layoutY="17.0" mnemonicParsing="false" text="Delete" />
-                  <Label fx:id="fileMessage" layoutX="396.0" layoutY="21.0" prefHeight="17.0" prefWidth="191.0" text="File message" />
+                  <ListView layoutX="48.0" layoutY="6.0" prefHeight="84.0" prefWidth="240.0" />
+                  <Button layoutX="305.0" layoutY="17.0" mnemonicParsing="false" text="Load" />
+                  <Button layoutX="362.0" layoutY="17.0" mnemonicParsing="false" text="Delete" />
+                  <Label fx:id="fileMessage" layoutX="432.0" layoutY="21.0" prefHeight="17.0" prefWidth="191.0" text="File message" />
                </children>
             </AnchorPane>
          </children></HBox>
    </bottom>
    <center>
-      <TextArea fx:id="textEditor" prefHeight="182.0" prefWidth="554.0" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="textEditor" prefHeight="124.0" prefWidth="510.0" BorderPane.alignment="CENTER" />
    </center>
    <left>
       <HBox prefHeight="178.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
@@ -39,75 +39,69 @@
       <HBox prefHeight="332.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <HBox prefHeight="129.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="131.0" prefWidth="749.0">
          <children>
-            <HBox prefHeight="44.0" prefWidth="600.0">
+            <VBox prefHeight="112.0" prefWidth="613.0">
                <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <HBox prefHeight="99.0" prefWidth="600.0">
                      <children>
-                        <VBox prefHeight="112.0" prefWidth="613.0">
+                        <AnchorPane prefHeight="99.0" prefWidth="217.0">
                            <children>
-                              <HBox prefHeight="99.0" prefWidth="600.0">
+                              <TextField fx:id="documentNameField" layoutX="48.0" layoutY="36.0" prefWidth="149.0" text=" Untitled Document" />
+                           </children>
+                        </AnchorPane>
+                        <VBox prefHeight="30.0" prefWidth="240.0" translateX="30.0">
+                           <children>
+                              <AnchorPane prefHeight="124.0" prefWidth="240.0">
                                  <children>
-                                    <AnchorPane prefHeight="99.0" prefWidth="217.0">
-                                       <children>
-                                          <TextField fx:id="documentNameField" layoutX="54.0" layoutY="37.0" prefWidth="149.0" text=" Untitled Document" />
-                                       </children>
-                                    </AnchorPane>
-                                    <VBox prefHeight="30.0" prefWidth="240.0" translateX="30.0">
-                                       <children>
-                                          <AnchorPane prefHeight="124.0" prefWidth="240.0">
-                                             <children>
-                                                <Button fx:id="boldButton" layoutX="27.0" layoutY="34.0" mnemonicParsing="false" onAction="#boldText" prefHeight="40.0" prefWidth="40.0" text="B">
-                                                   <font>
-                                                      <Font name="Calibri Bold" size="19.0" />
-                                                   </font>
-                                                </Button>
-                                                <Button fx:id="underlineButton" layoutX="120.0" layoutY="34.0" mnemonicParsing="false" onAction="#underlineText" prefHeight="40.0" prefWidth="40.0" text="U̲">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Button>
-                                                <Button fx:id="italicsButton" layoutX="73.0" layoutY="34.0" mnemonicParsing="false" onAction="#italicizeText" prefHeight="40.0" prefWidth="40.0" text="𝐼">
-                                                   <font>
-                                                      <Font size="19.0" />
-                                                   </font>
-                                                </Button>
-                                                <MenuButton layoutX="27.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="Arial">
-                                                  <items>
-                                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                                  </items>
-                                                </MenuButton>
-                                                <MenuButton layoutX="116.0" layoutY="84.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="11">
-                                                  <items>
-                                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                                  </items>
-                                                </MenuButton>
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </VBox>
+                                    <Button fx:id="boldButton" layoutX="27.0" layoutY="34.0" mnemonicParsing="false" onAction="#boldText" prefHeight="40.0" prefWidth="40.0" text="B">
+                                       <font>
+                                          <Font name="Calibri Bold" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="underlineButton" layoutX="120.0" layoutY="34.0" mnemonicParsing="false" onAction="#underlineText" prefHeight="40.0" prefWidth="40.0" text="U̲">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="italicsButton" layoutX="73.0" layoutY="34.0" mnemonicParsing="false" onAction="#italicizeText" prefHeight="40.0" prefWidth="40.0" text="𝐼">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <MenuButton layoutX="27.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="Arial">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                                      </items>
+                                    </MenuButton>
+                                    <MenuButton layoutX="116.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="11">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                                      </items>
+                                    </MenuButton>
                                  </children>
-                              </HBox>
+                              </AnchorPane>
                            </children>
                         </VBox>
-                         <MenuBar prefHeight="25.0" prefWidth="700.0">
-                             <Menu mnemonicParsing="false" text="File">
-                                 <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save" />
-                                 <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
-                             </Menu>
-                             <Menu mnemonicParsing="false" text="Info">
-                                 <MenuItem fx:id="githubMI" mnemonicParsing="false" onAction="#onInfoGithub" text="Github" />
-                                 <MenuItem fx:id="iconMI" mnemonicParsing="false" onAction="#onInfoIcon" text="Icon" />
-                             </Menu>
-                         </MenuBar>
                      </children>
-                  </AnchorPane>
+                  </HBox>
                </children>
-            </HBox>
+            </VBox>
+             <MenuBar prefHeight="25.0" prefWidth="749.0">
+                 <Menu mnemonicParsing="false" text="File">
+                     <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save" />
+                     <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Open..." />
+                 </Menu>
+                 <Menu mnemonicParsing="false" text="Info">
+                     <MenuItem fx:id="githubMI" mnemonicParsing="false" onAction="#onInfoGithub" text="Github" />
+                     <MenuItem fx:id="iconMI" mnemonicParsing="false" onAction="#onInfoIcon" text="Icon" />
+                  <MenuItem fx:id="aboutMI" mnemonicParsing="false" onAction="#onAbout" text="About" />
+                 </Menu>
+             </MenuBar>
          </children>
-      </HBox>
+      </AnchorPane>
    </top>
 </BorderPane>

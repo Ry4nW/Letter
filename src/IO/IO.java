@@ -34,7 +34,7 @@ public class IO {
             return new IOResult<>(true, new TextFile(file, lines));
         } catch (IOException e) {
             e.printStackTrace();
-            return new IOResult<>(false, null);
+            return new IOResult(false, null);
         }
 
     }
