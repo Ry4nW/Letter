@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 
@@ -32,7 +34,7 @@ public class Controller {
     public Button italicsButton;
     public Button boldButton;
 
-    private IO model;
+    public IO model = new IO();
     private TextFile currentTextFile;
 
     // Requires: Nothing
@@ -63,15 +65,21 @@ public class Controller {
         File file = fileChooser.showOpenDialog(null);
 
         if (file != null) {
-            IOResult<TextFile> io = model.load(file.toPath());
+
+            Path path = file.toPath();
+            IOResult<TextFile> io = model.load(Paths.get(path.toString()));
 
             if (io.checked() && io.hasData()) {
 
                 currentTextFile = io.getData();
-                String content = "";
-
                 textEditor.clear();
-                currentTextFile.getContent().forEach(textEditor::appendText);
+                String text = "";
+
+                for (int i = 0; i < currentTextFile.getContent().size(); i++) {
+                    text += currentTextFile.getContent().get(i) + "\n";
+                }
+
+                textEditor.setText(text);
 
             } else {
                 fileMessage.setText("File load failed.");

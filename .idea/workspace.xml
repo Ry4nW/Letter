@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(textEditor): about page, updated documentation">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(textEditor, IO): load/save to be debugged">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/textEditor/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IO/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/IO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IO/IOResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/IOResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/textEditor/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +173,6 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15682282" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -257,6 +252,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -321,6 +327,10 @@
       <workItem from="1624821828179" duration="3658000" />
       <workItem from="1624826779738" duration="375000" />
       <workItem from="1624906997657" duration="5721000" />
+      <workItem from="1624936871257" duration="633000" />
+      <workItem from="1625101768280" duration="165000" />
+      <workItem from="1625102031744" duration="28000" />
+      <workItem from="1625112755139" duration="4143000" />
     </task>
     <task id="LOCAL-00001" summary="Test cases">
       <created>1622864969014</created>
@@ -427,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624825379716</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat(textEditor, IO): load/save to be debugged">
+      <created>1624936904885</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624936904886</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -495,7 +512,18 @@
     <MESSAGE value="feat(textEditor): GUI" />
     <MESSAGE value="new package(IO): drafted out IO system" />
     <MESSAGE value="feat(textEditor): about page, updated documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(textEditor): about page, updated documentation" />
+    <MESSAGE value="feat(textEditor, IO): load/save to be debugged" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(textEditor, IO): load/save to be debugged" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
