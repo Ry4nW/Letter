@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="junit:junit:4.13.2" level="project" />
+    <orderEntry type="library" name="org.fxmisc.richtext:richtextfx:0.10.6" level="project" />
   </component>
 </module>

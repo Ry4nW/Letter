@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
+import org.fxmisc.richtext.InlineCssTextArea;
+import textEditor.Controller;
+
 
 public class Main extends Application {
 
@@ -16,6 +19,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.getIcons().add(new Image("https://image.flaticon.com/icons/png/512/196/196308.png"));
         primaryStage.setTitle("Letter");
+
         Scene scene = new Scene(root, 700, 500);
         scene.getStylesheets().add("css/stylesheet.css");
         primaryStage.setScene(scene);

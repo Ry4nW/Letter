@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
@@ -19,6 +20,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
+import org.fxmisc.richtext.InlineCssTextArea;
 
 public class Controller {
 
@@ -26,7 +28,7 @@ public class Controller {
     public MenuItem iconMI;
 
     public TextField documentNameField;
-    public TextArea textEditor; // NOTE: To be replaced with InlineCSSTextArea.
+    public TextArea CSSTextEditor;
 
     public Label fileMessage;
 
@@ -35,6 +37,7 @@ public class Controller {
     public Button boldButton;
 
     public IO model = new IO();
+    public BorderPane borderPane;
     private TextFile currentTextFile;
 
     // Requires: Nothing
@@ -42,7 +45,11 @@ public class Controller {
     // Effects: Sets wrap text for our editor's text area, aka creates a newline for the user to type in
     // once the end of the textEditor's width is reached.
     public void initialize() {
-        textEditor.setWrapText(true);
+
+        InlineCssTextArea CSSTextEditor = new InlineCssTextArea();
+        borderPane.centerProperty().setValue(CSSTextEditor);
+
+        CSSTextEditor.setWrapText(true);
     }
 
     // Requires: Nothing.
@@ -50,7 +57,7 @@ public class Controller {
     // Effects: Saves all text from {textEditor} into a file through save() in the {IO} class.
     public void onSave() throws IOException {
 
-        TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(textEditor.getText().split("\n")));
+        TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(CSSTextEditor.getText().split("\n")));
         model.save(textFile);
 
     }
@@ -72,14 +79,15 @@ public class Controller {
             if (io.checked() && io.hasData()) {
 
                 currentTextFile = io.getData();
-                textEditor.clear();
-                String text = "";
+                CSSTextEditor.clear();
+
+                StringBuilder text = new StringBuilder();
 
                 for (int i = 0; i < currentTextFile.getContent().size(); i++) {
-                    text += currentTextFile.getContent().get(i) + "\n";
+                    text.append(currentTextFile.getContent().get(i)).append("\n");
                 }
 
-                textEditor.setText(text);
+                CSSTextEditor.setText(text.toString());
 
             } else {
                 fileMessage.setText("File load failed.");
@@ -136,7 +144,7 @@ public class Controller {
     // Effects: Bolds the highlighted text when pressed.
     public void boldText() {
 
-        IndexRange selection = textEditor.getSelection();
+        IndexRange selection = CSSTextEditor.getSelection();
 
     }
 
