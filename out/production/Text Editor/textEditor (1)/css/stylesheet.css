@@ -1,0 +1,20 @@
+#underlineButton {
+    -fx-background-image: url("../img/underlined-text.png");
+    -fx-background-size: 15px 15px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#boldButton {
+    -fx-background-image: url("../img/bold-text.png");
+    -fx-background-size: 15px 15px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#italicsButton {
+    -fx-background-image: url("../img/italics-text.png");
+    -fx-background-size: 15px 15px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
