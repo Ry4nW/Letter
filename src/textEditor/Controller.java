@@ -2,13 +2,13 @@ package textEditor;
 
 import IO.IO;
 import IO.IOResult;
+
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
@@ -27,40 +27,43 @@ public class Controller {
     public MenuItem githubMI;
     public MenuItem iconMI;
 
-    public TextField documentNameField;
-    public TextArea CSSTextEditor;
+    private final InlineCssTextArea textArea = new InlineCssTextArea();
 
     public Label fileMessage;
 
     public Button underlineButton;
     public Button italicsButton;
     public Button boldButton;
+    public Button removeStylingBtn;
 
-    public IO model = new IO();
+    public IO model = new IO(); // Class for our IO system.
     public BorderPane borderPane;
     private TextFile currentTextFile;
 
-    // Requires: Nothing
-    // Modifies:
+    // Requires: Nothing.
+    // Modifies: textArea
     // Effects: Sets wrap text for our editor's text area, aka creates a newline for the user to type in
-    // once the end of the textEditor's width is reached.
+    // once the end of the textEditor's width is reached, border, border style/width and other styling.
     public void initialize() {
 
-        InlineCssTextArea CSSTextEditor = new InlineCssTextArea();
-        borderPane.centerProperty().setValue(CSSTextEditor);
+        borderPane.centerProperty().setValue(textArea); // Adds our text area to the center of the borderPane.
 
-        CSSTextEditor.setWrapText(true);
+        textArea.setWrapText(true);
+        textArea.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 2px");
+
     }
+
 
     // Requires: Nothing.
     // Modifies: Empty's the textArea.
     // Effects: Saves all text from {textEditor} into a file through save() in the {IO} class.
     public void onSave() throws IOException {
 
-        TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(CSSTextEditor.getText().split("\n")));
+        TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(textArea.getText().split("\n")));
         model.save(textFile);
 
     }
+
 
     // Requires: Nothing.
     // Modifies: Fills the textArea.
@@ -79,7 +82,7 @@ public class Controller {
             if (io.checked() && io.hasData()) {
 
                 currentTextFile = io.getData();
-                CSSTextEditor.clear();
+                textArea.clear();
 
                 StringBuilder text = new StringBuilder();
 
@@ -87,7 +90,7 @@ public class Controller {
                     text.append(currentTextFile.getContent().get(i)).append("\n");
                 }
 
-                CSSTextEditor.setText(text.toString());
+                textArea.appendText(text.toString());
 
             } else {
                 fileMessage.setText("File load failed.");
@@ -95,12 +98,14 @@ public class Controller {
         }
     }
 
+
     // Requires: Nothing.
     // Modifies: Nothing.
     // Effects: Terminates the process.
     public void onClose() {
         System.exit(0);
     }
+
 
     // Requires: Nothing.
     // Modifies: Nothing.
@@ -115,6 +120,7 @@ public class Controller {
 
     }
 
+
     // Requires: Nothing.
     // Modifies: Nothing.
     // Effects: Opens a link on the client's default browser to the application's Icon provider.
@@ -128,9 +134,10 @@ public class Controller {
 
     }
 
+
     // Requires: Nothing.
     // Modifies: Client's view.
-    // Effects: Inserts a popup serving as an "About Page" when pressed.
+    // Effects: Inserts a popup serving as an "About Page" when clicked.
     public void onAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
@@ -139,24 +146,41 @@ public class Controller {
         alert.show();
     }
 
+    private boolean isBold = false;
+
     // Requires: Highlighted area the client wants to bold.
-    // Modifies: textArea.
+    // Modifies: text in textArea.
     // Effects: Bolds the highlighted text when pressed.
     public void boldText() {
-
-        IndexRange selection = CSSTextEditor.getSelection();
-
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-weight: bold");
     }
 
-    // Requires: Highlighted area the client wants to italicize.
-    // Modifies: textArea.
+
+    // Requires: Highlighted area client wants to italicize.
+    // Modifies: text in textArea.
     // Effects: italicizes the highlighted text when pressed.
     public void italicizeText() {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-style: italic");
     }
 
-    // Requires: Highlighted area the client wants to underline.
-    // Modifies: textArea.
+
+    // Requires: Highlighted area client wants to underline.
+    // Modifies: text in textArea.
     // Effects: Underlines the highlighted text when pressed.
     public void underlineText() {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-underline: true");
+
     }
+
+    // Requires: Highlighted area client wants to remove all styling.
+    // Modifies: text
+    // Effects:
+    public void removeStyling() {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-weight: initial");
+    }
+
 }

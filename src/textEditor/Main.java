@@ -7,10 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
-import org.fxmisc.richtext.InlineCssTextArea;
-import textEditor.Controller;
-
-
 public class Main extends Application {
 
     @Override
