@@ -1,7 +1,6 @@
 package IO;
 
 import textEditor.TextFile;
-import textEditor.Controller;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,8 +20,6 @@ public class IO {
             Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.CREATE);
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-
         }
 
     }

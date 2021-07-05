@@ -19,11 +19,13 @@
          <children>
             <AnchorPane prefHeight="98.0" prefWidth="601.0">
                <children>
-                  <Button layoutX="205.0" layoutY="17.0" mnemonicParsing="false" onAction="#onLoad" text="Load .txt file" />
-                  <Button fx:id="clearAllBtn" layoutX="298.0" layoutY="17.0" mnemonicParsing="false" onAction="#clearTextArea" text="Clear all" />
-                  <Label fx:id="fileMessage" layoutX="205.0" layoutY="47.0" prefHeight="17.0" prefWidth="366.0" text="File message" />
-                  <Button fx:id="undoBtn" layoutX="371.0" layoutY="17.0" mnemonicParsing="false" onAction="#onUndo" text="Undo" />
-                  <Label fx:id="errorMessage" layoutX="205.0" layoutY="72.0" prefHeight="17.0" prefWidth="362.0" text="Error message" />
+                  <Button layoutX="238.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLoad" text="Load .txt file" />
+                  <Button fx:id="clearAllBtn" layoutX="336.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearTextArea" text="Clear all" />
+                  <Label fx:id="fileMessage" alignment="CENTER" layoutX="71.0" layoutY="54.0" prefHeight="20.0" prefWidth="529.0" text="File message" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Button fx:id="undoBtn" layoutX="410.0" layoutY="14.0" mnemonicParsing="false" onAction="#onUndo" text="Undo" />
                </children>
             </AnchorPane>
          </children></HBox>
@@ -43,7 +45,7 @@
                      <children>
                         <AnchorPane prefHeight="99.0" prefWidth="217.0">
                            <children>
-                              <TextField layoutX="54.0" layoutY="36.0" text="Untitled Document" />
+                              <TextField layoutX="54.0" layoutY="55.0" text="Untitled Document" />
                            </children></AnchorPane>
                         <VBox prefHeight="30.0" prefWidth="240.0" translateX="30.0">
                            <children>
@@ -66,17 +68,24 @@
                                     </Button>
                                     <MenuButton layoutX="27.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="Arial">
                                       <items>
-                                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                                        <MenuItem mnemonicParsing="false" onAction="#setArialFont" text="Arial " />
+                                        <MenuItem mnemonicParsing="false" onAction="#setHelveticaFont" text="Helvetica" />
+                                          <MenuItem mnemonicParsing="false" onAction="#setTimesNewRomanFont" text="Times New Roman" />
                                       </items>
                                     </MenuButton>
                                     <MenuButton layoutX="116.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="11">
                                       <items>
-                                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                                        <MenuItem fx:id="font10" mnemonicParsing="false" onAction="#setFontSize10" text="10" />
+                                          <MenuItem fx:id="font11" mnemonicParsing="false" onAction="#setFontSize11" text="11" />
+                                          <MenuItem fx:id="font12" mnemonicParsing="false" onAction="#setFontSize12" text="12" />
+                                          <MenuItem fx:id="font14" mnemonicParsing="false" onAction="#setFontSize13" text="14" />
+                                          <MenuItem fx:id="font16" mnemonicParsing="false" onAction="#setFontSize14" text="16" />
+                                          <MenuItem fx:id="font24" mnemonicParsing="false" onAction="#setFontSize15" text="24" />
+                                          <MenuItem fx:id="font48" mnemonicParsing="false" onAction="#setFontSize16" text="48" />
+                                          <MenuItem fx:id="font72" mnemonicParsing="false" onAction="#setFontSize17" text="72" />
                                       </items>
                                     </MenuButton>
-                                    <Button fx:id="removeStylingBtn" layoutX="181.0" layoutY="54.0" mnemonicParsing="false" onAction="#removeStyling" text="Remove Styling" />
+                                    <Button fx:id="removeStylingBtn" layoutX="232.0" layoutY="54.0" mnemonicParsing="false" onAction="#removeStyling" text="Remove Styling" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -90,8 +99,6 @@
                      <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save" />
                      <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
                   <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Open..." />
-                  <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save as New File..." />
-                  <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save as New File..." />
                  </Menu>
                  <Menu mnemonicParsing="false" text="Info">
                      <MenuItem fx:id="githubMI" mnemonicParsing="false" onAction="#onInfoGithub" text="Github" />

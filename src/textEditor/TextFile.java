@@ -22,4 +22,6 @@ public class TextFile {
     public List<String> getContent() {
         return content;
     }
+
+    public void setFile(Path path) { file = path; }
 }

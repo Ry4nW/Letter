@@ -4,12 +4,13 @@ import IO.IO;
 import IO.IOResult;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
+import org.fxmisc.richtext.InlineCssTextArea;
 
 import java.awt.*;
 import java.io.BufferedWriter;
@@ -24,9 +25,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import org.fxmisc.richtext.InlineCssTextArea;
-
 
 public class Controller {
 
@@ -49,39 +47,42 @@ public class Controller {
     public IO model = new IO(); // Class for our IO system.
     public BorderPane borderPane;
     private TextFile currentTextFile;
-    private ArrayList<String> autoSaveText = new ArrayList<>();
+    private ArrayList<String> autoSaveText = new ArrayList<>(); // This ArrayList will auto save text from {textArea}
+    // when the client decides to execute {clearTextArea}.
 
     // Requires: Nothing.
-    // Modifies: textArea
+    // Modifies: Letter.
     // Effects: Sets wrap text for our editor's text area, aka creates a newline for the user to type in
-    // once the end of the textEditor's width is reached, border, border style/width and other styling.
+    // once the end of the textEditor's width is reached, border, border style/width, button disabling to
+    // prevent errors and other features on initialization.
     public void initialize() {
 
         removeStylingBtn.setDisable(true);
         undoBtn.setDisable(true);
         fileMessage.setText("");
-        errorMessage.setText("");
 
         borderPane.centerProperty().setValue(textArea); // Adds our text area to the center of the borderPane.
 
         textArea.setWrapText(true);
-        textArea.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 2px");
+        textArea.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 2px; -fx-font-family: Arial; -fx-font-size: 12px");
 
     }
 
 
     // Requires: Nothing.
-    // Modifies: Empty's the textArea.
-    // Effects: Saves all text from {textEditor} into a file through save() in the {IO} class.
-    public void onSave() throws IOException {
+    // Modifies: textArea.
+    // Effects: Saves all text from {textEditor} into a file through save() in the {IO} class. If a NullPointerException
+    // occurs (aka the user did not load an existing .txt file to edit), it will allow the user to create a new one.
+    // Prints StackTrace if all else fails.
+    public void onSave() {
 
         try {
 
             TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(textArea.getText().split("\n")));
             model.save(textFile);
-            fileMessage.setText(currentTextFile.getFile() + "was successfully saved.");
+            fileMessage.setText(currentTextFile.getFile() + " was successfully saved.");
 
-        } catch (NullPointerException exception) {
+        } catch (NullPointerException bruh) {
 
             try {
 
@@ -89,22 +90,21 @@ public class Controller {
 
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setTitle("Save Text as .txt");
-                fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Files", "*.*"));
-                File f = new File("Untitled.txt");
+                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text Document (*.txt)", ".txt");
+                fileChooser.getExtensionFilters().add(extFilter);
 
-                fileChooser.showSaveDialog(null);
-                final Path path = Paths.get(f.getPath());
+                File file = fileChooser.showSaveDialog(null);
 
-                try (final BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8, StandardOpenOption.CREATE)) {
+                try (final BufferedWriter writer = Files.newBufferedWriter(file.toPath(), StandardCharsets.UTF_8, StandardOpenOption.CREATE)) {
                     writer.write(content);
                     writer.flush();
                 }
 
-                fileMessage.setText("Text successfully saved as " + f.getName());
+                fileMessage.setText("Text successfully saved as " + file.getName() + ". Please open that file to continue working on it.");
 
-            } catch (Exception e) {
+            } catch (Exception bruh2) {
                 fileMessage.setText("File save failed.");
-                e.printStackTrace();
+                bruh2.printStackTrace();
             }
 
         }
@@ -113,8 +113,9 @@ public class Controller {
 
 
     // Requires: Nothing.
-    // Modifies: Fills the textArea.
-    // Effects: Loads all text from a selected file through load() in the {IO} class.
+    // Modifies: textArea.
+    // Effects: Loads all text from an existing .txt file through load() in the {IO} class. Appends all text from
+    // the file to {textArea}, allowing the user to edit and update the same file.
     public void onLoad() {
 
         FileChooser fileChooser = new FileChooser();
@@ -156,7 +157,7 @@ public class Controller {
 
 
     // Requires: Nothing.
-    // Modifies: Nothing.
+    // Modifies: Clients browser.
     // Effects: Opens a link on the client's default browser to the Github page of the application.
     public void onInfoGithub() {
 
@@ -170,8 +171,8 @@ public class Controller {
 
 
     // Requires: Nothing.
-    // Modifies: Nothing.
-    // Effects: Opens a link on the client's default browser to the application's Icon provider.
+    // Modifies: Client's browser.
+    // Effects: Opens a link on the client's default browser to the application's Icon "provider".
     public void onInfoIcon() {
 
         try {
@@ -184,7 +185,7 @@ public class Controller {
 
 
     // Requires: Nothing.
-    // Modifies: Client's view.
+    // Modifies: Client's browser.
     // Effects: Inserts a popup serving as an "About Page" when clicked.
     public void onAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -195,9 +196,9 @@ public class Controller {
     }
 
 
-    // Requires: Highlighted area the client wants to bold.
-    // Modifies: text in textArea.
-    // Effects: Bolds the highlighted text when pressed.
+    // Requires: Highlighted text the client wants to bold.
+    // Modifies: Highlighted text in textArea.
+    // Effects: Bolds any highlighted text when executed.
     public void boldText() {
         IndexRange selection = textArea.getSelection();
         textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-weight: bold");
@@ -205,9 +206,9 @@ public class Controller {
     }
 
 
-    // Requires: Highlighted area client wants to italicize.
-    // Modifies: text in textArea.
-    // Effects: italicizes the highlighted text when pressed.
+    // Requires: Highlighted text client wants to italicize.
+    // Modifies: Highlighted text in textArea.
+    // Effects: Bolds any highlighted text when executed.
     public void italicizeText() {
         IndexRange selection = textArea.getSelection();
         textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-style: italic");
@@ -215,18 +216,18 @@ public class Controller {
     }
 
 
-    // Requires: Highlighted area client wants to underline.
-    // Modifies: text in textArea.
-    // Effects: Underlines the highlighted text when pressed.
+    // Requires: Highlighted text client wants to underline.
+    // Modifies: Highlights text in textArea.
+    // Effects: Bolds any highlighted text when executed.
     public void underlineText() {
         IndexRange selection = textArea.getSelection();
         textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-underline: true");
         removeStylingBtn.setDisable(false);
     }
 
-    // Requires: Highlighted area client wants to remove all styling.
-    // Modifies: text
-    // Effects:
+    // Requires: Highlighted text client wants to remove all styling.
+    // Modifies: Highlighted text in textArea.
+    // Effects: Bolds any highlighted text when executed.
     public void removeStyling() {
         IndexRange selection = textArea.getSelection();
         textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-weight: initial");
@@ -236,8 +237,8 @@ public class Controller {
 
     // Requires: Nothing.
     // Modifies: textArea.
-    // Effects: Clears the textArea
-    public void clearTextArea(ActionEvent actionEvent) {
+    // Effects: Completely empties the textArea.
+    public void clearTextArea() {
 
         fileMessage.setText("");
 
@@ -259,7 +260,9 @@ public class Controller {
     // Requires: A {clearTextArea} execution.
     // Modifies: textArea.
     // Effects: Undos a {clearTextArea} execution.
-    public void onUndo(ActionEvent actionEvent) {
+    public void onUndo() {
+
+        fileMessage.setText("");
 
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -269,7 +272,68 @@ public class Controller {
 
         textArea.appendText(stringBuilder.toString());
         undoBtn.setDisable(true);
+        fileMessage.setText("Text successfully restored.");
+
     }
 
+    // Requires: Nothing.
+    // Modifies: Highlighted text client wants to change font.
+    // Effects: Changes the font for highlighted text.
+    public void setArialFont() {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-family: Arial, sans-serif");
+    }
 
+    public void setHelveticaFont() {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-family: Helvetica, sans-serif");
+    }
+
+    public void setTimesNewRomanFont() {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-family: Times New Roman, Times, serif");
+    }
+
+    // Requires: Nothing.
+    // Modifies: Highlighted text client wants to change font size.
+    // Effects: Changes the selected font size for highlighted text.
+    public void setFontSize10(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 10px");
+    }
+
+    public void setFontSize11(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 11px");
+    }
+
+    public void setFontSize12(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 12px");
+    }
+
+    public void setFontSize13(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 14px");
+    }
+
+    public void setFontSize14(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 16px");
+    }
+
+    public void setFontSize15(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 24px");
+    }
+
+    public void setFontSize16(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 48px");
+    }
+
+    public void setFontSize17(ActionEvent actionEvent) {
+        IndexRange selection = textArea.getSelection();
+        textArea.setStyle(selection.getStart(), selection.getEnd(), "-fx-font-size: 72px");
+    }
 }

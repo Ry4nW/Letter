@@ -11,3 +11,7 @@
 
 }
 
+#fileMessage {
+    -fx-text-alignment: center;
+}
+
