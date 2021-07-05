@@ -1,6 +1,7 @@
 package IO;
 
 import textEditor.TextFile;
+import textEditor.Controller;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,9 +17,12 @@ public class IO {
     // Effects: Writes into textFile, prints StackTrace if an IOException occurs.
     public void save(TextFile textFile) {
         try {
+
             Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.CREATE);
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+
         }
 
     }

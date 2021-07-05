@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(img, textEditor): unversioned files">
-      <change afterPath="$PROJECT_DIR$/src/textEditor/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(textEditor, lib): maven, bold, italicize, underline, remove styling">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_7_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_javafx_7_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_linux64_7_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_linux64_arm_7_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_mac_7_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_win32_7_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_teamdev_jxbrowser_jxbrowser_win64_7_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Text Editor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Text Editor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/textEditor/editorContent.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text Editor/textEditor/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/css/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/img/Text Editor icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/img/bold-text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/img/italics-text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/img/underlined-text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text Editor/textEditor/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IO/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/textEditor/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textEditor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textEditor/editorContent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/dictionary.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +92,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -265,17 +277,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -346,7 +347,10 @@
       <workItem from="1625112755139" duration="4608000" />
       <workItem from="1625258861924" duration="3334000" />
       <workItem from="1625281391201" duration="853000" />
-      <workItem from="1625344115009" duration="7844000" />
+      <workItem from="1625344115009" duration="8008000" />
+      <workItem from="1625418666035" duration="7949000" />
+      <workItem from="1625430071632" duration="1631000" />
+      <workItem from="1625432736538" duration="1841000" />
     </task>
     <task id="LOCAL-00001" summary="Test cases">
       <created>1622864969014</created>
@@ -481,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625262170133</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat(textEditor, lib): maven, bold, italicize, underline, remove styling">
+      <created>1625360901254</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625360901254</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -553,17 +564,8 @@
     <MESSAGE value="feat(textEditor.Controller): debugged {onLoad()}." />
     <MESSAGE value="feat(textEditor): debugged save, added InlineCSSTextArea" />
     <MESSAGE value="feat(img, textEditor): unversioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(img, textEditor): unversioned files" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat(textEditor, lib): maven, bold, italicize, underline, remove styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(textEditor, lib): maven, bold, italicize, underline, remove styling" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
