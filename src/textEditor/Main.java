@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("editorGUI.fxml"));
         primaryStage.getIcons().add(new Image("https://image.flaticon.com/icons/png/512/196/196308.png"));
         primaryStage.setTitle("Letter");
 

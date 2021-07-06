@@ -3,6 +3,7 @@ package IO;
 import textEditor.TextFile;
 
 import java.io.IOException;
+import java.nio.charset.MalformedInputException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -28,7 +29,7 @@ public class IO {
     // Modifies: Nothing.
     // Effects: Loads text from the file and returns a successful IOResult, prints StackTrace and returns an
     // unsuccessful IOResult if an IOException occurs.
-    public IOResult<TextFile> load(Path file) {
+    public IOResult<TextFile> load(Path file) throws MalformedInputException {
 
         try {
             List<String> lines = Files.readAllLines(file);
