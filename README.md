@@ -29,7 +29,7 @@ All testing is done in [./testCases](./testCases).
 - `onLoad()` - checks for the correct loading of files into `InlineCSSTextArea` and file paths.
 - `onSave()` - checks for the correct writing of files into a loaded file or saving of a new `.txt` file.
 - `onClose()` - checks for the status of the client's work save and continues accordingly.
-- `[styling]Text()`, `set[font]Font()`, `setFontSize[size]()` - checks the correct styling and consistency of text styling,
+- `[styling]Text()`, `set[font]Font()`, `setFontSize[size]()` - checks for the correct styling and consistency of text styling,
 fonts and font sizes.
 
 
