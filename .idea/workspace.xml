@@ -4,16 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(textEditor): + features, make new save, clear/undo">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat(textEditor): finished styling, debugged save">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/fileLoadValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/fileSaveValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/onCloseValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/textStyleValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Text Editor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Text Editor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IO/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/textEditor/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textEditor/TextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/TextFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/File.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/editorGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/editorGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IO/IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IO/IO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/textEditor/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textEditor/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textEditor/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textEditor/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textEditor/File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textEditor/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textEditor/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textEditor/editorGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textEditor/editorGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/loadFileTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/saveFileTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +187,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FriendsBook" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -349,7 +362,13 @@
       <workItem from="1625430071632" duration="1631000" />
       <workItem from="1625432736538" duration="1841000" />
       <workItem from="1625456334865" duration="1580000" />
-      <workItem from="1625513436483" duration="6505000" />
+      <workItem from="1625513436483" duration="6777000" />
+      <workItem from="1625594813820" duration="5062000" />
+      <workItem from="1625606212925" duration="1103000" />
+      <workItem from="1625607701745" duration="1245000" />
+      <workItem from="1625617583285" duration="3032000" />
+      <workItem from="1625674685673" duration="377000" />
+      <workItem from="1625787032860" duration="5541000" />
     </task>
     <task id="LOCAL-00001" summary="Test cases">
       <created>1622864969014</created>
@@ -505,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625456662656</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat(textEditor): save/load completion, font sizes and font types">
+      <created>1625520186491</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1625520186491</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat(textEditor): alert for unsaved, consistent styling">
+      <created>1625607318037</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1625607318037</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -579,7 +612,10 @@
     <MESSAGE value="feat(img, textEditor): unversioned files" />
     <MESSAGE value="feat(textEditor, lib): maven, bold, italicize, underline, remove styling" />
     <MESSAGE value="feat(textEditor): + features, make new save, clear/undo" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(textEditor): + features, make new save, clear/undo" />
+    <MESSAGE value="feat(textEditor): save/load completion, font sizes and font types" />
+    <MESSAGE value="feat(textEditor): alert for unsaved, consistent styling" />
+    <MESSAGE value="feat(textEditor): finished styling, debugged save" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(textEditor): finished styling, debugged save" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">

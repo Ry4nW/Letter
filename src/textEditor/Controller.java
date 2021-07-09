@@ -72,7 +72,8 @@ public class Controller {
         borderPane.centerProperty().setValue(textArea); // Adds our text area to the center of the borderPane.
 
         textArea.setWrapText(true);
-        textArea.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 2px; -fx-font-family: Arial; -fx-font-size: 11px");
+        textArea.setStyle("-fx-border-style: solid; -fx-border-width: 1px; -fx-padding: 15px;  -fx-border-color: grey; " +
+                "-fx-border-radius: 1px; -fx-fill: transparent; -fx-font-family: Arial; -fx-font-size: 11px; -fx-outline: thick solid #00ff00;");
 
     }
 
@@ -96,7 +97,7 @@ public class Controller {
 
             TextFile textFile = new TextFile(currentTextFile.getFile(), Arrays.asList(textArea.getText().split("\n")));
             model.save(textFile);
-            fileMessage.setText(currentTextFile.getFile() + " was successfully saved.");
+            fileMessage.setText(fileNameField.getText() + " was successfully saved.");
 
         } catch (NullPointerException bruh /* NullPointerException occurs when we try to fetch {currentTextFile.getFile()} and there is no current file loaded. */) {
 
@@ -177,7 +178,23 @@ public class Controller {
     // confirmation.
     public void onClose() {
 
-        if (!textArea.getText().equals("") && onCloseSaveCheck.size() == 0 || textArea.getText().equals(onCloseSaveCheck.get(0))) {
+        try {
+
+            if (!textArea.getText().equals("") && onCloseSaveCheck.size() == 0 && textArea.getText().equals(autoSaveText.get(0))) {
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Letter");
+                alert.setHeaderText("Exit");
+                alert.setContentText("Save " + fileNameField.getText() + " before exiting?");
+
+                if (alert.showAndWait().get() == ButtonType.OK) {
+                    onSave();
+                    return;
+                }
+
+            }
+
+        } catch (IndexOutOfBoundsException e) {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Letter");
@@ -190,9 +207,11 @@ public class Controller {
             }
 
         }
+
         System.exit(0);
 
     }
+
 
 
     // Requires: Nothing.

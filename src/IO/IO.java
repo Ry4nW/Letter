@@ -2,11 +2,13 @@ package IO;
 
 import textEditor.TextFile;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.MalformedInputException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.List;
 
 // Our class for saving text into files and loading them back.
@@ -16,9 +18,21 @@ public class IO {
     // Modifies: The textfile provided.
     // Effects: Writes into textFile, prints StackTrace if an IOException occurs.
     public void save(TextFile textFile) {
-        try {
 
-            Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.CREATE);
+        try {
+            FileWriter writer = new FileWriter(textFile.getFile().toString());
+
+            writer.write("");
+            for (String string : textFile.getContent()) {
+                writer.write(string);
+            }
+
+            writer.close();
+
+            /*
+            Files.write(textFile.getFile(), clear, StandardOpenOption.WRITE);
+            Files.write(textFile.getFile(), textFile.getContent(), StandardOpenOption.APPEND);
+            */
         } catch (IOException e) {
             e.printStackTrace();
         }
