@@ -23,7 +23,7 @@ Download and run the jar file in [out/production/](https://github.com/Ry4nW/Lett
 
 ## Methods and Testing
 
-All testing is done in [./testCases](./testCases).
+All testing is done in [./validation](./validation).
 
 **Methods tested:**
 - `onLoad()` - checks for the correct loading of files into `InlineCSSTextArea` and file paths.
