@@ -25,7 +25,7 @@ Download and run the jar file in [`out/production/`](./out/production/Text Edito
 
 All testing is done in [./testCases](./testCases).
 
-###Methods tested:
+**Methods tested:**
 - `onLoad()` - checks for the correct loading of files into `InlineCSSTextArea` and file paths.
 - `onSave()` - checks for the correct writing of files into a loaded file or saving of a new `.txt` file.
 - `onClose()` - checks for the status of the client's work save and continues accordingly.
