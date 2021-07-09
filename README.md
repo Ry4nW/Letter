@@ -4,7 +4,7 @@
 
 ## Installation
 
-Download and run the jar file in [`out/production/`](./out/production/Text Editor).
+Download and run the jar file in [out/production/](./out/production/Text Editor).
 
 ## Features
 
