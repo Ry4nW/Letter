@@ -15,10 +15,10 @@ Download and run the jar file in [`out/production/`](./out/production/Text Edito
 
 ## Technology
 
-###[JavaFX](https://openjfx.io/)
+[JavaFX](https://openjfx.io/)
 > an open source, next generation client application platform for desktop, mobile and embedded systems built on Java. It is a collaborative effort by many individuals and companies with the goal of producing a modern, efficient, and fully featured toolkit for developing rich client applications.
 
-###[InlineCSSTextArea from RichTextFX](https://github.com/FXMisc/RichTextFX)
+[InlineCSSTextArea from RichTextFX](https://github.com/FXMisc/RichTextFX)
 > RichTextFX provides a memory-efficient text area for JavaFX that allows the developer to style ranges of text, display custom objects in-line (no more HTMLEditor), and override the default behavior only where necessary without overriding any other part of the behavior.
 
 ## Methods and Testing
