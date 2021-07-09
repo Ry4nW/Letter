@@ -1,17 +1,38 @@
-
-#underlineButton {
-
+.root {
+    -fx-focus-color: transparent;
 }
 
-#boldButton {
-
+#menuBar {
+    -fx-background-color: #bebebe;
+    -fx-color-label-visible: true;
+    -fx-fill-width: 1000px; 
 }
 
-#italicsButton {
+#fileNameField, #setFontMenu, #fontSizeMenu, #removeStylingBtn, #loadBtn, #clearAllBtn, #undoBtn {
+    -fx-border-color: white;
+    -fx-background-position: center;
+}
 
+#fileNameField:hover, #setFontMenu:hover, #fontSizeMenu:hover, #removeStylingBtn:hover, #loadBtn:hover, #clearAllBtn:hover, #undoBtn:hover {
+    -fx-border-color: #bebebe;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+
+#underlineButton, #boldButton, #italicsButton {
+    -fx-background-color: #d3d3d3;
+}
+
+#underlineButton:hover, #boldButton:hover, #italicsButton:hover {
+    -fx-background-color: #bebebe;
 }
 
 #fileMessage {
     -fx-text-alignment: center;
 }
+
+#borderPane {
+    -fx-background-color: #d3d3d3;
+}
+
 
