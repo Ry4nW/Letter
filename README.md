@@ -4,7 +4,7 @@
 
 ## Installation
 
-Download and run the jar file in [out/production/](https://github.com/Ry4nW/Letter/tree/main/out/production/Text%20Editor).
+Run main in [./textEditor/Main.java](./textEditor/Main.java).
 
 ## Features
 
