@@ -4,7 +4,7 @@
 
 ## Installation
 
-Run main in [./textEditor/Main.java](./textEditor/Main.java).
+Run main in [./textEditor/Main.java](./src/textEditor/Main.java).
 
 ## Features
 
