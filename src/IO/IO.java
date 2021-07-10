@@ -24,7 +24,7 @@ public class IO {
 
             writer.write("");
             for (String string : textFile.getContent()) {
-                writer.write(string);
+                writer.write(string + "\n");
             }
 
             writer.close();
