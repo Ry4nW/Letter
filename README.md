@@ -23,7 +23,7 @@ Run main in [./textEditor/Main.java](./src/textEditor/Main.java).
 
 ## Methods and Testing
 
-All testing is done in [./validation](./validation).
+All testing is done in [./testCases](./testCases).
 
 **Methods tested:**
 - `onLoad()` - checks for the correct loading of files into `InlineCSSTextArea` and file paths.
