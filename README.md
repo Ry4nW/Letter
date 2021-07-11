@@ -2,6 +2,8 @@
 
 <p style="text-align: center">A minimalist text editor for all your composition needs. Spend less time fiddling with technology and more time writing.</p> 
 
+![image](https://user-images.githubusercontent.com/63277458/125179201-01bbc800-e1a1-11eb-9af6-0030cd810343.png)
+
 ## Installation
 
 Run main in [./textEditor/Main.java](./src/textEditor/Main.java).
