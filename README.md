@@ -2,7 +2,7 @@
 
 <p style="text-align: center">A minimalist text editor for all your composition needs. Spend less time fiddling with technology and more time writing.</p> 
 
-![image](https://user-images.githubusercontent.com/63277458/125179204-0ed8b700-e1a1-11eb-871c-c3d4db0f654b.png)
+![image](https://user-images.githubusercontent.com/63277458/125179205-1ef09680-e1a1-11eb-9778-6798f465b0f5.png)
 
 ## Installation
 
